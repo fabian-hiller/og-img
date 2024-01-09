@@ -6,9 +6,9 @@
  * @returns The font data.
  */
 export async function fetchFont(url: URL | string) {
-  const resposne = await fetch(url);
-  if (!resposne.ok) {
-    throw new Error(`Failed to fetch font: ${resposne.statusText}`);
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch font: ${response.statusText}`);
   }
-  return resposne.arrayBuffer();
+  return response.arrayBuffer();
 }
