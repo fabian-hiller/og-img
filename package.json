@@ -1,0 +1,66 @@
+{
+  "name": "og-img",
+  "description": "Generate Open Graph images for your website",
+  "version": "0.1.0",
+  "license": "MPL-2.0",
+  "author": "Fabian Hiller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabian-hiller/og-img"
+  },
+  "keywords": [
+    "open graph",
+    "image",
+    "satori",
+    "resvg",
+    "html",
+    "png",
+    "response"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint \"src/**/*.ts*\" && tsc --noEmit",
+    "format": "prettier --write ./src",
+    "format.check": "prettier --check ./src",
+    "build": "tsup",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.56.1",
+    "@types/react": "^18.2.47",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.1.1",
+    "react": "^18.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@resvg/resvg-wasm": "^2.6.0",
+    "satori": "^0.10.11",
+    "satori-html": "^0.3.2"
+  }
+}
