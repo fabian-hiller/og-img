@@ -2,7 +2,7 @@
 
 This is a framework agnostic package for generating Open Graph images using [Satori](https://github.com/vercel/satori) and [resvg](https://github.com/RazrFalcon/resvg). Built using Web APIs, this package can be executed with Node.js and on the edge. You can use this package to add dynamic Open Graph images to your SvelteKit, Astro, SolidStart or Qwik website.
 
-> The difference to `@vercel/og` is that this package loads the WebAssembly module needed to convert SVG to PNG lazily at runtime and provides a framework agnostic workaround for defining the content of the images using [`satori-html`](https://github.com/natemoo-re/satori-html).
+> The difference to `@vercel/og` is that this package loads the WebAssembly module needed to convert SVG to PNG lazily at runtime and provides a framework agnostic workaround for defining the content of the image using [`satori-html`](https://github.com/natemoo-re/satori-html).
 
 ## Installation
 
@@ -22,12 +22,7 @@ To generate an image, all you need to do is return an `ImageResponse` via a serv
 > To get proper syntax highlighting for the tagged template literal in Visual Studio Code, you can install the [lit-html](https://marketplace.visualstudio.com/items?itemName=bierner.lit-html) extension.
 
 ```ts
-import { ImageResponse, html } from 'og-img';
-
-async function loadFont(url: string) {
-  const resposne = await fetch(url);
-  return resposne.arrayBuffer();
-}
+import { fetchFont, ImageResponse, html } from 'og-img';
 
 // With SvelteKit
 export async function GET() {
@@ -45,7 +40,7 @@ export async function GET() {
         {
           name: 'Roboto',
           // Use `fs` (Node.js only) or `fetch` to read font file
-          data: await loadFont('https://www.example.com/fonts/roboto-400.ttf'),
+          data: await fetchFont('https://www.example.com/fonts/roboto-400.ttf'),
           weight: 400,
           style: 'normal',
         },
@@ -71,7 +66,7 @@ export const onGet = async ({ send }) => {
           {
             name: 'Roboto',
             // Use `fs` (Node.js only) or `fetch` to read font file
-            data: await loadFont(
+            data: await fetchFont(
               'https://www.example.com/fonts/roboto-400.ttf'
             ),
             weight: 400,

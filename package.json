@@ -1,7 +1,7 @@
 {
   "name": "og-img",
-  "description": "Generate Open Graph images for your website",
-  "version": "0.1.0",
+  "description": "Generate dynamic Open Graph images for your website",
+  "version": "0.2.0",
   "license": "MPL-2.0",
   "author": "Fabian Hiller",
   "repository": {
