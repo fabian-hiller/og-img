@@ -17,7 +17,7 @@ bun add og-img        # bun
 
 ## How it works
 
-To generate an image, all you need to do is return an `ImageResponse` via a server endpoint. You can use `html` to easily define the content of your image.
+To generate an image, all you need to do is return an `ImageResponse` via a server endpoint (it probably will not work with SSG). You can use `html` to easily define the content of your image.
 
 > To get proper syntax highlighting for the tagged template literal in Visual Studio Code, you can install the [lit-html](https://marketplace.visualstudio.com/items?itemName=bierner.lit-html) extension.
 
